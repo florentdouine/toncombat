@@ -1,1 +1,42 @@
-# toncombat
+<html>
+<style>
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        font-weight: 200;
+    }
+</style>
+<body>
+
+<h1>
+    Ton combat dure depuis<br/>
+    <b><span id="total"></span></b> jours<br/>
+    Soit <b><span id="month"></span></b> mois et <b><span id="days"></span></b> jours !<br/>
+    ❤️
+</h1>
+
+</body>
+</html>
+
+<script>
+
+var date1 = new Date("04/21/2022");
+var date2 = new Date();
+  
+// To calculate the time difference of two dates
+var Difference_In_Time = date2.getTime() - date1.getTime();
+  
+// To calculate the no. of days between two dates
+var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+document.getElementById("total").innerHTML = parseInt(Difference_In_Days);
+
+var diffMonth = date2.getMonth() - date1.getMonth()
+var diffdays = date2.getDate() - date1.getDate()
+if (diffdays < 0) {
+    diffdays += 30
+    diffMonth -= 1
+}
+
+  document.getElementById("month").innerHTML = diffMonth;
+  document.getElementById("days").innerHTML = diffdays;
+</script>
